@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:fitsSystemWindows="true"
+        tools:context=".EarthActivity">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="7dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="false"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/indicatorSeekBarX"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/setWallpaper"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape"
+            android:text="全局壁纸"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/setlockscreenWallpaper"
+            app:layout_constraintStart_toEndOf="@+id/button" />
+
+        <Button
+            android:id="@+id/setlockscreenWallpaper"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape"
+            android:text="锁屏壁纸"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape"
+            android:onClick="loadImage"
+            android:text="同步"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/indicatorSeekBarSIZE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            app:isb_indicator_color="@color/color_blue"
+            app:isb_indicator_text_size="28sp"
+            app:isb_progress="50"
+            app:isb_thumb_color="@color/color_blue"
+            app:isb_track_progress_color="@color/color_blue"
+            app:layout_constraintBottom_toTopOf="@+id/indicatorSeekBarTIME"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/indicatorSeekBarX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            app:isb_indicator_color="@color/color_blue"
+            app:isb_max="100"
+            app:isb_min="-100"
+            app:isb_only_thumb_draggable="true"
+            app:isb_show_indicator="circular_bubble"
+            app:isb_thumb_color="@color/color_blue"
+            app:isb_ticks_count="2"
+            app:isb_track_progress_color="@color/color_blue"
+            app:layout_constraintBottom_toTopOf="@+id/indicatorSeekBarY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/indicatorSeekBarY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            app:isb_indicator_color="@color/color_blue"
+            app:isb_max="300"
+            app:isb_min="-300"
+            app:isb_only_thumb_draggable="true"
+            app:isb_show_indicator="circular_bubble"
+            app:isb_thumb_color="@color/color_blue"
+            app:isb_ticks_count="2"
+            app:isb_track_progress_color="@color/color_blue"
+            app:layout_constraintBottom_toTopOf="@+id/indicatorSeekBarSIZE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/indicatorSeekBarTIME"
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            app:isb_indicator_color="@color/color_blue"
+            app:isb_progress="0"
+            app:isb_show_indicator="none"
+            app:isb_show_tick_marks_type="oval"
+            app:isb_thumb_color="@color/color_blue"
+            app:isb_tick_marks_color="@color/color_blue"
+            app:isb_ticks_count="5"
+            app:isb_track_progress_color="@color/color_blue"
+            app:layout_constraintBottom_toTopOf="@+id/setWallpaper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>

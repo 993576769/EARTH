@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">地球</string>
+    <string name="simple_dialog">帮助</string>
+    <string name="dialog_message">长按"同步"把应用加入白名单\n进度条分别设置X轴位置，Y轴位置，地球的大小和同步时间间隔\服务器在日本，同步速度可能较慢</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
